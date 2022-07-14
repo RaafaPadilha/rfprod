@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href=@{/css/style.css}>
+    <title>RFProd - Dashboard</title>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="title">
+            <h1>RFProd</h1>
+            <p>Sistema para Controle de Produção de Fios e Cabos Elétricos</p>
+        </div>
+        <a href="#">
+            <span><i class="fa-solid fa-gauge"></i></span>
+            Dashboard
+        </a>
+        <a th:href="@{listagemProcessos}">
+            <span><i class="fa-solid fa-business-time"></i></span>
+            Processos
+        </a>
+        <a href="#">
+            <span><i class="fa-solid fa-gears"></i></span>
+            Máquinas
+        </a>
+        <a href="#">
+            <span><i class="fa-solid fa-basket-shopping"></i></span>
+            Produtos
+        </a>
+        <a href="#">
+            <span><i class="fa-solid fa-user-group"></i></span>
+            Funcionários
+        </a>
+        <a href="#">
+            <span><i class="fa-solid fa-file-invoice"></i></span>
+            Ordens de Produção
+        </a>
+    </aside>
+
+    <main class="content">
+        <h1>Dashboard</h1>
+        <div class="chart-line-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <h1>Matéria Prima</h1>
+        <div class="chart-pizza-container">
+            <canvas id="myChartPizza1"></canvas>
+            <canvas id="myChartPizza2"></canvas>
+            <canvas id="myChartPizza3"></canvas>
+        </div>
+    </main>
+
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script th:src=@{/js/script.js}></script>
+</body>
+</html>
