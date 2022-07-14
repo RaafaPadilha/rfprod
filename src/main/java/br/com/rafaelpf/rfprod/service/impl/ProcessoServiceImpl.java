@@ -1,6 +1,7 @@
 package br.com.rafaelpf.rfprod.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,21 @@ public class ProcessoServiceImpl implements ProcessoService {
 	public List<Processo> todosProcessos() {
 		List<Processo> processos = (List<Processo>) processoRepository.findAll();
 		return processos;
+	}
+
+	@Override
+	public Optional<Processo> processoPorId(Long id) {
+		return processoRepository.findById(id);
+	}
+
+	@Override
+	public Processo salvarProcesso(Processo processo) {
+		return processoRepository.save(processo);
+	}
+
+	@Override
+	public void deletarProcesso(Long id) {
+		processoRepository.deleteById(id);
 	}
 
 }
