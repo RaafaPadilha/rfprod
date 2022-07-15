@@ -28,12 +28,12 @@ public class ProcessoServiceImpl implements ProcessoService {
 	}
 
 	@Override
-	public Processo salvarProcesso(Processo processo) {
+	public Processo novoProcesso(Processo processo) {
 		return processoRepository.save(processo);
 	}
 
 	@Override
-	public void deletarProcesso(Long id) {
+	public void excluirProcesso(Long id) {
 		processoRepository.deleteById(id);
 	}
 

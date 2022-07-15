@@ -7,7 +7,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" th:href="@{/css/style.css}">
-	<title>RFProd - Listagem de Processos</title>
+	<title>RFProd - Listagem de Máquinas</title>
 </head>
 <body>
     <aside class="sidebar">
@@ -42,24 +42,30 @@
     </aside>
 
     <main class="content">
-		<h1>Listagem de Processos</h1>
+		<h1>Listagem de Máquinas</h1>
         <div class="table-content">
-            <a th:href="@{/novoProcessoForm}"><button>Novo Processo</button></a>
+            <a th:href="@{/novoProcessoForm}"><button>Nova Máquina</button></a>
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
+						<th>Numeração</th>
+						<th>Descrição</th>
+						<th>Processo</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
-					<tr th:each="processo: ${processos}">
-						<td th:text="${processo.id}"></td>
-						<td th:text="${processo.nome}"></td>
+					<tr th:each="maquina: ${maquinas}">
+						<td th:text="${maquina.id}"></td>
+						<td th:text="${maquina.nome}"></td>
+						<td th:text="${maquina.numeracao}"></td>
+						<td th:text="${maquina.descricao}"></td>
+						<td th:text="${maquina.processo.nome}"></td>
 						<td>
-							<a th:href="@{/alterarProcessoForm(id=${processo.id})}" class="alterar-button">Alterar</a>
-							<a th:href="@{/excluirProcesso(id=${processo.id})}" class="excluir-button">Excluir</a>
+							<a href="#" class="alterar-button">Alterar</a>
+							<a href="#" class="excluir-button">Excluir</a>
 						</td>
 					</tr>
                 </tbody>

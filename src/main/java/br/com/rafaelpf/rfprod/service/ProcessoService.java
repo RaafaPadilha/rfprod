@@ -11,8 +11,8 @@ public interface ProcessoService {
 
 	Optional<Processo> processoPorId(Long id);
 
-	Processo salvarProcesso(Processo processo);
+	Processo novoProcesso(Processo processo);
 
-	void deletarProcesso(Long id);
+	void excluirProcesso(Long id);
 
 }

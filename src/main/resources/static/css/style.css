@@ -73,3 +73,68 @@ body {
     max-width: 400px;
     max-height: 400px;
 }
+
+/* Processo CSS */
+
+.table-content > a > button {
+    background-color: #00A36C;
+    font-size: 16px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.table-content > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: solid 1px #F3F3F3;
+    padding: 8px;
+}
+
+.table-content > table > thead > tr > th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: #FFF;
+}
+
+.alterar-button {
+    padding: 5px 10px;
+    background-color: #E0B802;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+.excluir-button {
+    padding: 5px 10px;
+    background-color: #AB0B00;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+/* Novo Processo */
+
+.form-content > p{
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    font-size: 16pt;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14pt;
+    margin-bottom: 20px;
+}
