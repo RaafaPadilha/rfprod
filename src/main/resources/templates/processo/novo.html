@@ -27,7 +27,7 @@
             <span><i class="fa-solid fa-gears"></i></span>
             Máquinas
         </a>
-        <a th:href="@{/}">
+        <a th:href="@{/listagemProdutos}">
             <span><i class="fa-solid fa-basket-shopping"></i></span>
             Produtos
         </a>
@@ -45,10 +45,14 @@
 		<h1>Novo Processo</h1>
         <div class="form-content">
             <p>Os campos que contem * são obrigatórios.</p>
-            <form th:action="@{novoProcesso}" th:object="${processo}" method="post">
-                <label>Nome (*):</label>
-                <input type="text" th:field="*{nome}" placeholder="Nome do Processo" required>
-                <input type="submit" value="Cadastrar">
+            <form th:action="@{/novoProcesso}" th:object="${processo}" method="post">
+                <p class="full-width">
+					<label>Nome (*):</label>
+					<input type="text" th:field="*{nome}" placeholder="Nome do Processo" required>
+                </p>
+                <p class="full-width">
+                    <input type="submit" value="Cadastrar">
+                </p>
             </form>
         </div>
     </main>

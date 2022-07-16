@@ -1,4 +1,4 @@
--- CREATE DATABASE TCC;
+-- CREATE DATABASE RFPROD;
 
 CREATE TABLE processo (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -12,6 +12,8 @@ CREATE TABLE maquina (
 	descricao VARCHAR(45) NOT NULL,
 	id_processo INT NOT NULL,
 	FOREIGN KEY (id_processo) REFERENCES processo (id)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
 );
 
 CREATE TABLE funcionario (
@@ -23,7 +25,7 @@ CREATE TABLE funcionario (
 	celular VARCHAR(15) NOT NULL,
 	email VARCHAR(100) NOT NULL UNIQUE,
 	endereco VARCHAR(150) NOT NULL,
-	salario NUMERIC(6, 2) NOT NULL,
+	salario DECIMAL(6, 2) NOT NULL,
 	id_maquina INT NOT NULL,
 	FOREIGN KEY (id_maquina) REFERENCES maquina (id)
 );
@@ -33,7 +35,7 @@ CREATE TABLE produto (
 	nome VARCHAR(45) NOT NULL,
 	categoria VARCHAR(30) NOT NULL,
 	classe VARCHAR(15) NOT NULL,
-	bitola DECIMAL NOT NULL,
+	bitola DECIMAL(3, 2) NOT NULL,
 	cor VARCHAR(20) NOT NULL
 );
 

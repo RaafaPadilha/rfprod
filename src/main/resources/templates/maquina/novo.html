@@ -7,7 +7,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" th:href="@{/css/style.css}">
-	<title>RFProd - Listagem de Máquinas</title>
+	<title>RFProd - Nova Máquina</title>
 </head>
 <body>
     <aside class="sidebar">
@@ -42,34 +42,34 @@
     </aside>
 
     <main class="content">
-		<h1>Listagem de Máquinas</h1>
-        <div class="table-content">
-            <a th:href="@{/novaMaquinaForm}"><button>Nova Máquina</button></a>
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-						<th>Numeração</th>
-						<th>Descrição</th>
-						<th>Processo</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-					<tr th:each="maquina: ${maquinas}">
-						<td th:text="${maquina.id}"></td>
-						<td th:text="${maquina.nome}"></td>
-						<td th:text="${maquina.numeracao}"></td>
-						<td th:text="${maquina.descricao}"></td>
-						<td th:text="${maquina.processo.nome}"></td>
-						<td>
-							<a th:href="@{/alterarMaquinaForm(id=${maquina.id})}" class="alterar-button">Alterar</a>
-							<a th:href="@{/excluirMaquina(id=${maquina.id})}" class="excluir-button">Excluir</a>
-						</td>
-					</tr>
-                </tbody>
-            </table>
+		<h1>Nova Máquina</h1>
+        <div class="form-content">
+            <p>Os campos que contem * são obrigatórios.</p>
+            <form th:action="@{/novaMaquina}" th:object="${maquina}" method="post">
+                <p>
+                    <label>Nome (*):</label>
+                    <input type="text" th:field="*{nome}" placeholder="Nome da máquina" required>
+                </p>
+                <p>
+                    <label>Numeração (*):</label>
+                    <input type="text" th:field="*{numeracao}" placeholder="Numeração da máquina">
+                </p>
+                <p>
+                    <label>Descrição (*):</label>
+                    <input type="text" th:field="*{descricao}" placeholder="Descrição sobre a máquina">
+                </p>
+                <p>
+                    <label>Processo (*):</label>
+                    <select th:field="*{processo}">
+                        <option th:each="processo : ${processos}"
+								th:value="${processo.id}"
+								th:text="${processo.nome}"></option>
+                    </select>
+                </p>
+                <p class="full-width">
+                    <input type="submit" value="Cadastrar">
+                </p>
+            </form>
         </div>
     </main>
 </body>
