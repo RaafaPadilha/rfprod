@@ -74,9 +74,9 @@ body {
     max-height: 400px;
 }
 
-/* Processo CSS */
+/* Listagem CSS */
 
-.table-content > a > button {
+.content > a > button {
     background-color: #00A36C;
     font-size: 16px;
     color: #FFF;
@@ -85,6 +85,13 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     cursor: pointer;
+}
+
+.table-content { /* Precisa de correções */
+    height: 70vh;
+    width: 80vw;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .table-content > table {
