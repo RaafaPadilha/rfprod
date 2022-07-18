@@ -7,7 +7,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" th:href="@{/css/style.css}">
-	<title>RFProd - Alterar Máquina</title>
+	<title>RFProd - Alterar Funcionário</title>
 </head>
 <body>
     <aside class="sidebar">
@@ -42,29 +42,49 @@
     </aside>
 
     <main class="content">
-		<h1>Alterar Máquina</h1>
+		<h1>Alterar Funcionário</h1>
         <div class="form-content">
             <p>Os campos que contem * são obrigatórios.</p>
-            <form th:action="@{/novaMaquina}" th:object="${maquina}" method="post">
+            <form th:action="@{/novoFuncionario}" th:object="${funcionario}" method="post">
 				<input type="hidden" th:field="*{id}">
                 <p>
                     <label>Nome (*):</label>
                     <input type="text" th:field="*{nome}" placeholder="Nome da máquina" required>
                 </p>
                 <p>
-                    <label>Numeração (*):</label>
-                    <input type="text" th:field="*{numeracao}" placeholder="Numeração da máquina">
+                    <label>Sobrenome (*):</label>
+                    <input type="text" th:field="*{sobrenome}" placeholder="Numeração da máquina">
                 </p>
                 <p>
-                    <label>Descrição (*):</label>
-                    <input type="text" th:field="*{descricao}" placeholder="Descrição sobre a máquina">
+                    <label>Data de Nascimento (*):</label>
+                    <input type="text" th:field="*{dataNascimento}" placeholder="Numeração da máquina">
                 </p>
                 <p>
-                    <label>Processo (*):</label>
-                    <select th:field="*{processo}">
-                        <option th:each="processo : ${processos}"
-								th:value="${processo.id}"
-								th:text="${processo.nome}"></option>
+                    <label>CPF (*):</label>
+                    <input type="text" th:field="*{cpf}" placeholder="Numeração da máquina">
+                </p>
+                <p>
+                    <label>Celular (*):</label>
+                    <input type="text" th:field="*{celular}" placeholder="Numeração da máquina">
+                </p>
+                <p>
+                    <label>E-mail (*):</label>
+                    <input type="text" th:field="*{email}" placeholder="Numeração da máquina">
+                </p>
+                <p class="full-width">
+                    <label>Endereço (*):</label>
+                    <input type="text" th:field="*{endereco}" placeholder="Numeração da máquina">
+                </p>
+                <p>
+                    <label>Salário (*):</label>
+                    <input type="text" th:field="*{salario}" placeholder="Numeração da máquina">
+                </p>
+                <p>
+                    <label>Máquina (*):</label>
+                    <select th:field="*{maquina}">
+                        <option th:each="maquina : ${maquinas}"
+								th:value="${maquina.id}"
+								th:text="${maquina.nome}"></option>
                     </select>
                 </p>
                 <p class="full-width">

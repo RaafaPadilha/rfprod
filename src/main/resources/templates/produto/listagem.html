@@ -31,7 +31,7 @@
             <span><i class="fa-solid fa-basket-shopping"></i></span>
             Produtos
         </a>
-        <a th:href="@{/}">
+        <a th:href="@{/listagemFuncionarios}">
             <span><i class="fa-solid fa-user-group"></i></span>
             Funcionários
         </a>
@@ -44,7 +44,7 @@
     <main class="content">
 		<h1>Listagem de Produtos</h1>
         <div class="table-content">
-            <a th:href="@{/}"><button>Novo Produto</button></a>
+            <a th:href="@{/novoProdutoForm}"><button>Novo Produto</button></a>
             <table>
                 <thead>
                     <tr>
@@ -66,8 +66,8 @@
 						<td th:text="${produto.bitola}"></td>
 						<td th:text="${produto.cor}"></td>
 						<td>
-							<a href="#" class="alterar-button">Alterar</a>
-							<a href="#" class="excluir-button">Excluir</a>
+							<a th:href="@{/alterarProdutoForm(id=${produto.id})}" class="alterar-button">Alterar</a>
+							<a th:href="@{/excluirProduto(id=${produto.id})}" class="excluir-button">Excluir</a>
 						</td>
 					</tr>
                 </tbody>

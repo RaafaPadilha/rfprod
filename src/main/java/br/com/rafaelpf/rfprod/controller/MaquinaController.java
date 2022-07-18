@@ -35,7 +35,7 @@ public class MaquinaController {
     @GetMapping(value = "/novaMaquinaForm")
     public ModelAndView novaMaquinaForm() {
         Maquina maquina = new Maquina();
-		List<Processo>processos = processoService.todosProcessos();
+		List<Processo> processos = processoService.todosProcessos();
 
         ModelAndView mView = new ModelAndView("/maquina/novo");
 
