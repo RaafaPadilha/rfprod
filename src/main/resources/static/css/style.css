@@ -112,6 +112,13 @@ td, th {
     color: #FFF;
 }
 
+.apontamento-button {
+    padding: 5px 10px;
+    background-color: #4645BD;
+    border-radius: 5px;
+    color: #FFF;
+}
+
 .alterar-button {
     padding: 5px 10px;
     background-color: #E0B802;
