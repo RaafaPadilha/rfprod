@@ -27,8 +27,10 @@ public class FuncionarioController {
 	@GetMapping(value = "/listagemFuncionarios")
 	public ModelAndView listagemMaquinas() {
 		List<Funcionario> funcionarios = funcionarioService.todosFuncionarios();
+
 		ModelAndView mView = new ModelAndView("/funcionario/listagem")
 			.addObject("funcionarios", funcionarios);
+
 		return mView;
 	}
 
@@ -37,10 +39,9 @@ public class FuncionarioController {
         Funcionario funcionario = new Funcionario();
 		List<Maquina> maquinas = maquinaService.todasMaquinas();
 
-        ModelAndView mView = new ModelAndView("/funcionario/novo");
-
-		mView.addObject("funcionario", funcionario);
-		mView.addObject("maquinas", maquinas);
+        ModelAndView mView = new ModelAndView("/funcionario/novo")
+			.addObject("funcionario", funcionario)
+			.addObject("maquinas", maquinas);
 
         return mView;
     }
@@ -56,10 +57,9 @@ public class FuncionarioController {
         Funcionario funcionario = funcionarioService.funcionarioPorId(id).get();
 		List<Maquina> maquinas = maquinaService.todasMaquinas();
 
-        ModelAndView mView = new ModelAndView("/funcionario/alterar");
-
-		mView.addObject("funcionario", funcionario);
-		mView.addObject("maquinas", maquinas);
+        ModelAndView mView = new ModelAndView("/funcionario/alterar")
+			.addObject("funcionario", funcionario)
+			.addObject("maquinas", maquinas);
 
         return mView;
     }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.rafaelpf.rfprod.model.OrdemProducao;
@@ -39,5 +40,13 @@ public class OrdemProducaoController {
 		ordemProducaoService.novaOrdemProducao(ordemProducao);
 		return "redirect:/listagemOrdensProducao";
 	}
+
+    @GetMapping(value = "/alterarOrdemProducaoForm")
+    public ModelAndView alterarOrdemProducaoForm(@RequestParam Long id) {
+        OrdemProducao ordemProducao = ordemProducaoService.ordemProducaoPorId(id).get();
+        ModelAndView mView = new ModelAndView("/op/alterar")
+            .addObject("ordemProducao", ordemProducao);
+        return mView;
+    }
 
 }

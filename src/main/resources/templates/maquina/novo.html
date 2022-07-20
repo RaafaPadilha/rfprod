@@ -48,15 +48,15 @@
             <form th:action="@{/novaMaquina}" th:object="${maquina}" method="post">
                 <p>
                     <label>Nome (*):</label>
-                    <input type="text" th:field="*{nome}" placeholder="Nome da máquina" required>
+                    <input type="text" th:field="*{nome}" maxlength="45" placeholder="Nome da máquina" required>
                 </p>
                 <p>
                     <label>Numeração (*):</label>
-                    <input type="text" th:field="*{numeracao}" placeholder="Numeração da máquina">
+                    <input type="text" th:field="*{numeracao}" maxlength="10" placeholder="Numeração da máquina">
                 </p>
                 <p>
                     <label>Descrição (*):</label>
-                    <input type="text" th:field="*{descricao}" placeholder="Descrição sobre a máquina">
+                    <input type="text" th:field="*{descricao}" maxlength="45" placeholder="Descrição sobre a máquina">
                 </p>
                 <p>
                     <label>Processo (*):</label>

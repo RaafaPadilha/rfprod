@@ -22,16 +22,20 @@ public class ProdutoController {
 	@GetMapping(value = "/listagemProdutos")
 	public ModelAndView listagemProdutos() {
 		List<Produto> produtos = produtoService.todosProdutos();
+
 		ModelAndView mView = new ModelAndView("/produto/listagem")
 			.addObject("produtos", produtos);
+
 		return mView;
 	}
 
     @GetMapping(value = "/novoProdutoForm")
     public ModelAndView novoProdutoForm() {
         Produto produto = new Produto();
+
 		ModelAndView mView = new ModelAndView("/produto/novo")
 			.addObject("produto", produto);
+
 		return mView;
     }
 
@@ -44,8 +48,10 @@ public class ProdutoController {
     @GetMapping(value = "/alterarProdutoForm")
     public ModelAndView alterarProcessoForm(@RequestParam Long id) {
         Produto produto = produtoService.produtoPorId(id).get();
+
         ModelAndView mView = new ModelAndView("/produto/alterar")
             .addObject("produto", produto);
+
         return mView;
     }
 

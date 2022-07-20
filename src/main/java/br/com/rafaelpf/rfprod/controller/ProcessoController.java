@@ -22,16 +22,20 @@ public class ProcessoController {
 	@GetMapping(value = "/listagemProcessos")
 	public ModelAndView listagemProcessos() {
 		List<Processo> processos = processoService.todosProcessos();
+
 		ModelAndView mView = new ModelAndView("/processo/listagem")
 			.addObject("processos", processos);
+
 		return mView;
 	}
 
     @GetMapping(value = "/novoProcessoForm")
     public ModelAndView novoProcessoForm() {
         Processo processo = new Processo();
+
         ModelAndView mView = new ModelAndView("/processo/novo")
             .addObject("processo", processo);
+
         return mView;
     }
 
@@ -44,8 +48,10 @@ public class ProcessoController {
     @GetMapping(value = "/alterarProcessoForm")
     public ModelAndView alterarProcessoForm(@RequestParam Long id) {
         Processo processo = processoService.processoPorId(id).get();
+
         ModelAndView mView = new ModelAndView("/processo/alterar")
             .addObject("processo", processo);
+
         return mView;
     }
 

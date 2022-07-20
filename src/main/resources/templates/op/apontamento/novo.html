@@ -7,7 +7,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" th:href="@{/css/style.css}">
-	<title>RFProd - Alterar Máquina</title>
+	<title>RFProd - Novo Apontamento</title>
 </head>
 <body>
     <aside class="sidebar">
@@ -42,30 +42,33 @@
     </aside>
 
     <main class="content">
-		<h1>Alterar Máquina</h1>
+		<h1>Novo Apontamento</h1>
         <div class="form-content">
             <p>Os campos que contem * são obrigatórios.</p>
-            <form th:action="@{/novaMaquina}" th:object="${maquina}" method="post">
-				<input type="hidden" th:field="*{id}">
-                <p>
-                    <label>Nome (*):</label>
-                    <input type="text" th:field="*{nome}" maxlength="45" placeholder="Nome da máquina" required>
+            <form th:action="@{/novoApontamento}" th:object="${apontamento}" method="post">
+                <p class="full-width">
+					<label>Data Atual (*):</label>
+					<input type="date" th:field="*{dataAtual}" required>
                 </p>
                 <p>
-                    <label>Numeração (*):</label>
-                    <input type="text" th:field="*{numeracao}" maxlength="10" placeholder="Numeração da máquina">
+					<label>Hora Inicial (*):</label>
+					<input type="time" th:field="*{horaInicio}" step="1" required>
                 </p>
                 <p>
-                    <label>Descrição (*):</label>
-                    <input type="text" th:field="*{descricao}" maxlength="45" placeholder="Descrição sobre a máquina">
+					<label>Hora Final (*):</label>
+					<input type="time" th:field="*{horaFim}" step="1" required>
                 </p>
                 <p>
-                    <label>Processo (*):</label>
-                    <select th:field="*{processo}">
-                        <option th:each="processo : ${processos}"
-								th:value="${processo.id}"
-								th:text="${processo.nome}"></option>
+                    <label>Máquina (*):</label>
+                    <select th:field="*{maquina}">
+                        <option th:each="maquina : ${maquinas}"
+								th:value="${maquina.id}"
+								th:text="${maquina.nome}"></option>
                     </select>
+                </p>
+                <p>
+					<label>Ordem de Produção (*):</label>
+					<input type="text" th:field="*{ordemProducao}" required>
                 </p>
                 <p class="full-width">
                     <input type="submit" value="Cadastrar">

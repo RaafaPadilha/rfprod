@@ -27,8 +27,10 @@ public class MaquinaController {
 	@GetMapping(value = "/listagemMaquinas")
 	public ModelAndView listagemMaquinas() {
 		List<Maquina> maquinas = maquinaService.todasMaquinas();
+
 		ModelAndView mView = new ModelAndView("/maquina/listagem")
 			.addObject("maquinas", maquinas);
+
 		return mView;
 	}
 
@@ -37,10 +39,9 @@ public class MaquinaController {
         Maquina maquina = new Maquina();
 		List<Processo> processos = processoService.todosProcessos();
 
-        ModelAndView mView = new ModelAndView("/maquina/novo");
-
-		mView.addObject("maquina", maquina);
-		mView.addObject("processos", processos);
+        ModelAndView mView = new ModelAndView("/maquina/novo")
+			.addObject("maquina", maquina)
+			.addObject("processos", processos);
 
         return mView;
     }
@@ -56,10 +57,9 @@ public class MaquinaController {
         Maquina maquina = maquinaService.maquinaPorId(id).get();
 		List<Processo> processos = processoService.todosProcessos();
 
-        ModelAndView mView = new ModelAndView("/maquina/alterar");
-
-        mView.addObject("maquina", maquina);
-		mView.addObject("processos", processos);
+        ModelAndView mView = new ModelAndView("/maquina/alterar")
+			.addObject("maquina", maquina)
+			.addObject("processos", processos);
 
         return mView;
     }
