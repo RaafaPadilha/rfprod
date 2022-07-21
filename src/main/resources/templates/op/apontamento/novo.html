@@ -68,7 +68,7 @@
                 </p>
                 <p>
 					<label>Ordem de Produção (*):</label>
-					<input type="text" th:field="*{ordemProducao}" required>
+					<input type="text" id="ordemProducao" name="ordemProducao" th:value="${ordemProducao.id}" readonly required>
                 </p>
                 <p class="full-width">
                     <input type="submit" value="Cadastrar">
