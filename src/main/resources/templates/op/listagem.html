@@ -64,6 +64,7 @@
 						<td th:text="${#dates.format(ordemProducao.dataFim, 'dd/MM/yyyy')}"></td>
 						<td th:text="${ordemProducao.status}"></td>
 						<td>
+							<a th:href="@{/listagemItensOrdemProducao(id=${ordemProducao.id})}" class="produtos-button">Produtos</a>
 							<a th:href="@{/listagemApontamentos(id=${ordemProducao.id})}" class="apontamento-button">Apontamentos</a>
 							<a th:href="@{/alterarOrdemProducaoForm(id=${ordemProducao.id})}" class="alterar-button">Alterar</a>
 						</td>

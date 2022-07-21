@@ -7,7 +7,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" th:href="@{/css/style.css}">
-	<title>RFProd - Alterar Ordem de Produção</title>
+	<title>RFProd - Adicionar Produto</title>
 </head>
 <body>
     <aside class="sidebar">
@@ -42,32 +42,51 @@
     </aside>
 
     <main class="content">
-		<h1>Alterar Ordem de Produção</h1>
+		<h1>Adicionar Produto</h1>
         <div class="form-content">
             <p>Os campos que contem * são obrigatórios.</p>
-            <form th:action="@{novaOrdemProducao}" th:object="${ordemProducao}" method="post">
-				<input type="hidden" th:field="*{id}">
+            <form  th:action="@{/novoItemOrdemProducao}" th:object="${novoItemOrdemProducao}" method="post">
                 <p>
-                    <label>Data de Criação (*):</label>
-                    <input type="date" th:field="*{dataCriacao}" required>
+					<label>Quantidade (*):</label>
+					<input type="number" th:field="*{quantidade}" placeholder="Quantidade" required>
                 </p>
-                <p>
-                    <label>Data Inicial (*):</label>
-                    <input type="date" th:field="*{dataInicio}">
-                </p>
-                <p>
-                    <label>Data Final (*):</label>
-                    <input type="date" th:field="*{dataFim}">
-                </p>
-                <p>
-                    <label>Status (*):</label>
-                    <input type="text" th:field="*{status}" placeholder="Status Atual da ordem de produção" required>
-                </p>
+				<p>
+                    <label>Produto (*):</label>
+                    <select th:field="*{produto}">
+                        <option th:each="produto : ${produtos}"
+								th:value="${produto.id}"
+								th:text="${produto.nome}"></option>
+                    </select>
+				</p>
+				<input type="hidden" id="ordemProducao" name="ordemProducao" th:value="${ordemProducao.id}">
                 <p class="full-width">
-                    <input type="submit" value="Cadastrar">
+                    <input type="submit" value="Adicionar">
                 </p>
             </form>
         </div>
+
+		<div class="table-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Produto</th>
+						<th>Cor</th>
+						<th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr th:each="itemOrdemProducao: ${itensOrdemProducao}">
+						<td th:text="${itemOrdemProducao.quantidade}"></td>
+						<td th:text="${itemOrdemProducao.produto.nome}"></td>
+						<td th:text="${itemOrdemProducao.produto.cor}"></td>
+						<td>
+							<a th:href="@{/excluirItemOrdemProducao(id=${itemOrdemProducao.id})}" class="excluir-button">Excluir</a>
+						</td>
+					</tr>
+                </tbody>
+            </table>
+		</div>
     </main>
 </body>
 </html>

@@ -112,28 +112,39 @@ td, th {
     color: #FFF;
 }
 
+.produtos-button {
+	padding: 5px 10px;
+	background-color: #8C15AB;
+    border-radius: 5px;
+    color: #FFF;
+}
+
 .apontamento-button {
     padding: 5px 10px;
-    background-color: #4645BD;
+    background-color: #0C8DAB;
     border-radius: 5px;
     color: #FFF;
 }
 
 .alterar-button {
     padding: 5px 10px;
-    background-color: #E0B802;
+    background-color: #AB9D0C;
     border-radius: 5px;
     color: #FFF;
 }
 
 .excluir-button {
     padding: 5px 10px;
-    background-color: #AB0B00;
+    background-color: #AB2203;
     border-radius: 5px;
     color: #FFF;
 }
 
 /* Novo Processo */
+.form-content {
+	margin: 0 0 20px 0;
+}
+
 .form-content > p{
     margin-bottom: 20px;
 }
