@@ -1,6 +1,12 @@
 package br.com.rafaelpf.rfprod.controller;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.rafaelpf.rfprod.model.OrdemProducao;
 import br.com.rafaelpf.rfprod.service.OrdemProducaoService;
+import br.com.rafaelpf.rfprod.util.OrdemProducaoExcelGenerator;
 
 @Controller
 public class OrdemProducaoController {
@@ -48,5 +55,22 @@ public class OrdemProducaoController {
             .addObject("ordemProducao", ordemProducao);
         return mView;
     }
+
+	@GetMapping("/exportarOrdemProducaoParaExcel")
+	public void exportarOrdemProducaoParaExcel(HttpServletResponse response) throws IOException {
+	  response.setContentType("application/octet-stream");
+	  DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+	  String currentDateTime = dateFormatter.format(new Date());
+
+	  String headerKey = "Content-Disposition";
+	  String headerValue = "attachment; filename=ordemProducao" + currentDateTime + ".xlsx";
+	  response.setHeader(headerKey, headerValue);
+
+	  List <OrdemProducao> listaOrdensProducao = ordemProducaoService.todasOrdensProducao();
+
+	  OrdemProducaoExcelGenerator generator = new OrdemProducaoExcelGenerator(listaOrdensProducao);
+
+	  generator.generateExcelFile(response);
+	}
 
 }
