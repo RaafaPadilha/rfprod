@@ -76,7 +76,7 @@
                 </p>
                 <p>
                     <label>Salário (*):</label>
-                    <input type="text" th:field="*{salario}" placeholder="Salário">
+                    <input type="number" th:field="*{salario}" min="0" max="999999" placeholder="Salário">
                 </p>
                 <p>
                     <label>Máquina (*):</label>
@@ -92,5 +92,7 @@
             </form>
         </div>
     </main>
+	<script src="https://unpkg.com/imask"></script>
+	<script th:src="@{/js/mask.js}"></script>
 </body>
 </html>
