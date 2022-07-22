@@ -43,7 +43,9 @@
 
     <main class="content">
 		<h1>Listagem de Apontamentos</h1>
-		<a th:href="@{/novoApontamentoForm(id=${ordemProducao.id})}"><button>Novo Apontamento</button></a>
+		<div class="options">
+			<a th:href="@{/novoApontamentoForm(id=${ordemProducao.id})}"><button>Novo Apontamento</button></a>
+		</div>
         <div class="table-content">
             <table>
                 <thead>

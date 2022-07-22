@@ -76,7 +76,11 @@ body {
 
 /* Listagem CSS */
 
-.content > a > button {
+.options {
+	display: inline-block;
+}
+
+.options > a > button {
     background-color: #00A36C;
     font-size: 16px;
     color: #FFF;
