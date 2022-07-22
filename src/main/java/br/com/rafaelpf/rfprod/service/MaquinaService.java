@@ -15,4 +15,6 @@ public interface MaquinaService {
 
 	void excluirMaquina(Long id);
 
+	Integer quantidadeMaquina();
+
 }

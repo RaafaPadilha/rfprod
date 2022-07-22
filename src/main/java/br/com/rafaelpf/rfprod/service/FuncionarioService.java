@@ -15,4 +15,6 @@ public interface FuncionarioService {
 
 	void excluirFuncionario(Long id);
 
+	Integer quantidadeFuncionario();
+
 }

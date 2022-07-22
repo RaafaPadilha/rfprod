@@ -37,4 +37,9 @@ public class ProcessoServiceImpl implements ProcessoService {
 		processoRepository.deleteById(id);
 	}
 
+	@Override
+	public Integer quantidadeProcesso() {
+		return processoRepository.countProcesso();
+	}
+
 }

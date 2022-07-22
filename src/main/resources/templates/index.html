@@ -43,19 +43,40 @@
 
     <main class="content">
         <h1>Dashboard</h1>
-        <div class="chart-line-container">
-            <canvas id="myChart"></canvas>
-        </div>
-        <h1>Matéria Prima</h1>
-        <div class="chart-pizza-container">
-            <canvas id="myChartPizza1"></canvas>
-            <canvas id="myChartPizza2"></canvas>
-            <canvas id="myChartPizza3"></canvas>
+        <div class="box-contents">
+            <div class="box">
+                <div class="box-title">
+                    <p>O.P</p>
+                </div>
+                <div class="box-value">
+					<p th:text="${quantidadeOrdemProducao}"></p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <p>Funcionários</p>
+                </div>
+                <div class="box-value">
+                    <p th:text="${quantidadeFuncionario}"></p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <p>Processos</p>
+                </div>
+                <div class="box-value">
+                    <p th:text="${quantidadeProcesso}"></p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <p>Máquinas</p>
+                </div>
+                <div class="box-value">
+                    <p th:text="${quantidadeMaquina}"></p>
+                </div>
+            </div>
         </div>
     </main>
-
-    <!-- ChartJS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script th:src=@{/js/script.js}></script>
 </body>
 </html>

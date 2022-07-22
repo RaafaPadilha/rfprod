@@ -37,4 +37,9 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 		funcionarioRepository.deleteById(id);
 	}
 
+	@Override
+	public Integer quantidadeFuncionario() {
+		return funcionarioRepository.countFuncionario();
+	}
+
 }

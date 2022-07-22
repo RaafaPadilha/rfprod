@@ -13,6 +13,8 @@ public interface OrdemProducaoService {
 
 	OrdemProducao novaOrdemProducao(OrdemProducao ordemProducao);
 
+	Integer quantidadeOrdemProducao();
+
 	// Uma Ordem de Produção não pode ser excluida
 
 }

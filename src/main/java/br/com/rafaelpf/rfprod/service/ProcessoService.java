@@ -15,4 +15,6 @@ public interface ProcessoService {
 
 	void excluirProcesso(Long id);
 
+	Integer quantidadeProcesso();
+
 }

@@ -180,3 +180,33 @@ input, select {
     width: 100%;
     padding: 15px;
 }
+
+/* Boxs Index */
+.box-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box {
+    height: 300px;
+    width: 300px;
+    background-color: #FFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box-title > p {
+    font-size: 24pt;
+    font-weight: 700;
+    color: #00A36C;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.box-value > p {
+    font-size: 40pt;
+    font-weight: 700;
+    color: #00A36C;
+    text-align: center;
+    padding: 20px 0;
+}

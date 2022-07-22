@@ -61,7 +61,12 @@
                 </p>
                 <p>
                     <label>Status (*):</label>
-                    <input type="text" th:field="*{status}" maxlength="15" placeholder="Status Atual da ordem de produção" required>
+                    <select th:field="*{status}">
+                        <option value="Em Produção">Em produção</option>
+						<option value="Parado">Parado</option>
+						<option value="Finalizado">Finalizado</option>
+						<option value="Não Iniciado">Não Iniciado</option>
+                    </select>
                 </p>
                 <p class="full-width">
                     <input type="submit" value="Cadastrar">

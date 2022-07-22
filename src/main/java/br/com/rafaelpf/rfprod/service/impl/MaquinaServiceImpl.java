@@ -37,4 +37,9 @@ public class MaquinaServiceImpl implements MaquinaService {
 		maquinaRepository.deleteById(id);
     }
 
+	@Override
+	public Integer quantidadeMaquina() {
+		return maquinaRepository.countMaquina();
+	}
+
 }

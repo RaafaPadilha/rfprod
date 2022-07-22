@@ -32,4 +32,9 @@ public class OrdemProducaoServiceImpl implements OrdemProducaoService {
 		return ordemProducaoRepository.save(ordemProducao);
 	}
 
+	@Override
+	public Integer quantidadeOrdemProducao() {
+		return ordemProducaoRepository.countOrdemProducao();
+	}
+
 }
