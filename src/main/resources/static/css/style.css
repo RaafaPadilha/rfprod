@@ -89,6 +89,13 @@ body {
     border-collapse: collapse;
 }
 
+thead { /* thead fixado no topo da tabela */
+    position: sticky;
+    top: 0;
+    background-color: #00A36C;
+    padding: 5px;
+}
+
 td, th {
     border: solid 1px #F3F3F3;
     padding: 8px;
