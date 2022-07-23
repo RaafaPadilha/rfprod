@@ -47,7 +47,7 @@
 			<a th:href="@{/novoFuncionarioForm}"><button>Novo Funcionário</button></a>
 		</div>
         <div class="table-content">
-            <table>
+            <table id="tabela">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -60,8 +60,20 @@
 						<th>Endereço</th>
 						<th>Salário</th>
 						<th>Máquina</th>
-						<th>Ação</th>
+						<th rowspan="2">Ação</th>
                     </tr>
+					<tr>
+						<th><input type="text" id="txtColuna1"></th>
+						<th><input type="text" id="txtColuna2"></th>
+						<th><input type="text" id="txtColuna3"></th>
+						<th><input type="text" id="txtColuna4"></th>
+						<th><input type="text" id="txtColuna5"></th>
+						<th><input type="text" id="txtColuna6"></th>
+						<th><input type="text" id="txtColuna7"></th>
+						<th><input type="text" id="txtColuna8"></th>
+						<th><input type="text" id="txtColuna9"></th>
+						<th><input type="text" id="txtColuna10"></th>
+					</tr>
                 </thead>
                 <tbody>
 					<tr th:each="funcionario: ${funcionarios}">
@@ -84,5 +96,7 @@
             </table>
         </div>
     </main>
+	<script th:src="@{/js/jquery/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/filter.js}"></script>
 </body>
 </html>

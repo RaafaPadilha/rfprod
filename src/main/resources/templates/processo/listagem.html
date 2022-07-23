@@ -47,13 +47,17 @@
 			<a th:href="@{/novoProcessoForm}"><button>Novo Processo</button></a>
 		</div>
         <div class="table-content">
-            <table>
+            <table id="tabela">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Ação</th>
+                        <th rowspan="2">Ação</th>
                     </tr>
+					<tr>
+						<th><input type="text" id="txtColuna1"></th>
+						<th><input type="text" id="txtColuna2"></th>
+					</tr>
                 </thead>
                 <tbody>
 					<tr th:each="processo: ${processos}">
@@ -68,5 +72,7 @@
             </table>
         </div>
     </main>
+	<script th:src="@{/js/jquery/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/filter.js}"></script>
 </body>
 </html>

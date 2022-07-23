@@ -66,14 +66,19 @@
         </div>
 
 		<div class="table-content">
-            <table>
+            <table id="tabela">
                 <thead>
                     <tr>
                         <th>Quantidade</th>
                         <th>Produto</th>
 						<th>Cor</th>
-						<th>Ação</th>
+						<th rowspan="2">Ação</th>
                     </tr>
+					<tr>
+						<th><input type="text" id="txtColuna1"></th>
+						<th><input type="text" id="txtColuna2"></th>
+						<th><input type="text" id="txtColuna3"></th>
+					</tr>
                 </thead>
                 <tbody>
 					<tr th:each="itemOrdemProducao: ${itensOrdemProducao}">
@@ -88,5 +93,7 @@
             </table>
 		</div>
     </main>
+	<script th:src="@{/js/jquery/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/js/filter.js}"></script>
 </body>
 </html>
