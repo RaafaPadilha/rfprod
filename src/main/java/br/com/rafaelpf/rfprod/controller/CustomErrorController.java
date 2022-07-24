@@ -17,7 +17,9 @@ public class CustomErrorController implements ErrorController {
 
         if (response.getStatus() == HttpStatus.NOT_FOUND.value()) {
             modelAndView.setViewName("error/erro-404");
-        }
+        } else if (response.getStatus() == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+			modelAndView.setViewName("error/erro-500");
+		}
 
         return modelAndView;
 	}
