@@ -48,11 +48,11 @@
             <form th:action="@{/novoFuncionario}" th:object="${funcionario}" method="post">
                 <p>
                     <label>Nome (*):</label>
-                    <input type="text" th:field="*{nome}" maxlength="45" placeholder="Nome" required>
+                    <input type="text" th:field="*{nome}" pattern=".{4,}" maxlength="45" placeholder="Nome" required>
                 </p>
                 <p>
                     <label>Sobrenome (*):</label>
-                    <input type="text" th:field="*{sobrenome}" maxlength="45" placeholder="Sobrenome">
+                    <input type="text" th:field="*{sobrenome}" pattern=".{4,}" maxlength="45" placeholder="Sobrenome">
                 </p>
                 <p>
                     <label>Data de Nascimento (*):</label>
@@ -60,19 +60,19 @@
                 </p>
                 <p>
                     <label>CPF (*):</label>
-                    <input type="text" th:field="*{cpf}" maxlength="14" placeholder="000.000.000-00">
+                    <input type="text" th:field="*{cpf}" pattern=".{14,}" maxlength="14" placeholder="000.000.000-00">
                 </p>
                 <p>
                     <label>Celular (*):</label>
-                    <input type="text" th:field="*{celular}" maxlength="15" placeholder="(00) 00000-0000">
+                    <input type="text" th:field="*{celular}" pattern=".{15,}" maxlength="15" placeholder="(00) 00000-0000">
                 </p>
                 <p>
                     <label>E-mail (*):</label>
-                    <input type="text" th:field="*{email}" maxlength="100" placeholder="email@email.com">
+                    <input type="email" th:field="*{email}" maxlength="100" placeholder="email@email.com">
                 </p>
                 <p class="full-width">
                     <label>Endereço (*):</label>
-                    <input type="text" th:field="*{endereco}" maxlength="150" placeholder="Endereço">
+                    <input type="text" th:field="*{endereco}" pattern=".{4,}" maxlength="150" placeholder="Endereço">
                 </p>
                 <p>
                     <label>Salário (*):</label>
@@ -93,6 +93,6 @@
         </div>
     </main>
 	<script src="https://unpkg.com/imask"></script>
-	<script th:src="@{/js/mask.js}"></script>
+	<script th:src="@{/js/script.js}"></script>
 </body>
 </html>

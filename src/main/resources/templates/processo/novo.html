@@ -48,7 +48,7 @@
             <form th:action="@{/novoProcesso}" th:object="${processo}" method="post">
                 <p class="full-width">
 					<label>Nome (*):</label>
-					<input type="text" th:field="*{nome}" maxlength="45" placeholder="Nome do Processo" required>
+					<input type="text" th:field="*{nome}" pattern=".{4,}" maxlength="45" placeholder="Nome do Processo" required>
                 </p>
                 <p class="full-width">
                     <input type="submit" value="Cadastrar">
@@ -56,5 +56,6 @@
             </form>
         </div>
     </main>
+	<script th:src="@{/js/script.js}"></script>
 </body>
 </html>

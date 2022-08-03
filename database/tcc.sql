@@ -1,4 +1,4 @@
--- CREATE DATABASE RFPROD;
+CREATE DATABASE RFPROD;
 
 CREATE TABLE processo (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -35,15 +35,15 @@ CREATE TABLE produto (
 	nome VARCHAR(45) NOT NULL,
 	categoria VARCHAR(30) NOT NULL,
 	classe VARCHAR(15) NOT NULL,
-	bitola DECIMAL(3, 2) NOT NULL,
+	bitola DECIMAL(4, 1) NOT NULL,
 	cor VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE ordem_producao (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	data_criacao DATE NOT NULL,
-	data_inicio DATE,
-	data_fim DATE,
+	data_inicio DATE NOT NULL,
+	data_fim DATE NOT NULL,
 	status VARCHAR(15) NOT NULL
 );
 
