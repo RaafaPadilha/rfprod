@@ -14,31 +14,36 @@
         <div class="title">
             <h1>RFProd</h1>
             <p>Sistema para Controle de Produção de Fios e Cabos Elétricos</p>
+            <div class="menu-phone">
+                <img th:src="@{/images/icons8-cardápio-48.png}" onclick="myFunction();">
+            </div>
         </div>
-        <a th:href="@{/}">
-            <span><i class="fa-solid fa-gauge"></i></span>
-            Dashboard
-        </a>
-        <a th:href="@{/listagemProcessos}">
-            <span><i class="fa-solid fa-business-time"></i></span>
-            Processos
-        </a>
-        <a th:href="@{/listagemMaquinas}">
-            <span><i class="fa-solid fa-gears"></i></span>
-            Máquinas
-        </a>
-        <a th:href="@{/listagemProdutos}">
-            <span><i class="fa-solid fa-basket-shopping"></i></span>
-            Produtos
-        </a>
-        <a th:href="@{/listagemFuncionarios}">
-            <span><i class="fa-solid fa-user-group"></i></span>
-            Funcionários
-        </a>
-        <a th:href="@{/listagemOrdensProducao}">
-            <span><i class="fa-solid fa-file-invoice"></i></span>
-            Ordens de Produção
-        </a>
+		<div id="sidebar-menu-options">
+			<a th:href="@{/}">
+				<span><i class="fa-solid fa-gauge"></i></span>
+				Dashboard
+			</a>
+			<a th:href="@{/listagemProcessos}">
+				<span><i class="fa-solid fa-business-time"></i></span>
+				Processos
+			</a>
+			<a th:href="@{/listagemMaquinas}">
+				<span><i class="fa-solid fa-gears"></i></span>
+				Máquinas
+			</a>
+			<a th:href="@{/listagemProdutos}">
+				<span><i class="fa-solid fa-basket-shopping"></i></span>
+				Produtos
+			</a>
+			<a th:href="@{/listagemFuncionarios}">
+				<span><i class="fa-solid fa-user-group"></i></span>
+				Funcionários
+			</a>
+			<a th:href="@{/listagemOrdensProducao}">
+				<span><i class="fa-solid fa-file-invoice"></i></span>
+				Ordens de Produção
+			</a>
+		</div>
     </aside>
 
     <main class="content">
@@ -98,5 +103,6 @@
     </main>
 	<script th:src="@{/js/jquery/jquery-3.6.0.min.js}"></script>
 	<script th:src="@{/js/filter.js}"></script>
+	<script th:src="@{/js/script.js}"></script>
 </body>
 </html>

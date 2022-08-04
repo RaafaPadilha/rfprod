@@ -27,17 +27,22 @@ body {
     padding: 15px;
 }
 
-.sidebar > a {
+.menu-phone {
+	display: none;
+}
+
+#sidebar-menu-options > a {
+	display: block;
     color: #FFF;
     font-size: 18px;
     padding: 15px;
 }
 
-.sidebar > a > span {
+#sidebar-menu-options > a > span {
 	margin-right: 10px;
 }
 
-.sidebar > a:hover {
+#sidebar-menu-options > a:hover {
     background-color: #FFF;
     color: #00A36C;
 }
@@ -209,4 +214,85 @@ form input, select {
     color: #00A36C;
     text-align: center;
     padding: 20px 0;
+}
+
+/* Responsividade */
+
+@media only screen and (max-width: 1024px) {
+
+    body {
+        display: block;
+    }
+
+    .title > p {
+        display: none;
+    }
+
+    .title {
+        width: 100vw;
+        display: inline-block;
+    }
+
+    .title > h1 {
+        float: left;
+    }
+
+    .menu-phone {
+		display: block;
+        float: right;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    #sidebar-menu-options {
+        display: none;
+        text-align: center;
+    }
+
+    #sidebar-menu-options > a {
+        display: block;
+    }
+
+    .form-content > form > p > input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+	.table-content {
+		width: 100%;
+	}
+
+    table {
+        margin: 10px 0;
+    }
+
+	table > thead > tr > th > input {
+		display: none;
+	}
+
+	.box-contents {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+	}
+
+	.box {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 1440px) {
+	.box-contents {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+	}
+
+	.box {
+		width: 100%;
+	}
 }

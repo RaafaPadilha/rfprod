@@ -15,6 +15,16 @@ function validInputForm() {
 	});
 }
 
+function myFunction() {
+    var x = document.getElementById("sidebar-menu-options");
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
 /**
  * Mascaras para inputs
  */
