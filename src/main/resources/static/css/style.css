@@ -14,9 +14,13 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+a, button {
+	font-weight: 700;
+}
+
 .sidebar {
     width: 300px;
-    background-color: #00A36C;
+    background-color: #0072B2;
     color: #FFF;
     display: flex;
     flex-direction: column;
@@ -44,7 +48,7 @@ body {
 
 #sidebar-menu-options > a:hover {
     background-color: #FFF;
-    color: #00A36C;
+    color: #0072B2;
 }
 
 .content {
@@ -55,12 +59,12 @@ body {
 }
 
 .content > h1 {
-    color: #00A36C;
+    color: #0072B2;
     margin-bottom: 20px;
 }
 
 .content > p {
-	color: #00A36C;
+	color: #0072B2;
 	font-size: 16pt;
 	margin-bottom: 20px;
 }
@@ -72,7 +76,7 @@ body {
 }
 
 .options > a > button {
-    background-color: #00A36C;
+    background-color: #0072B2;
     font-size: 16px;
     color: #FFF;
     border: none;
@@ -97,7 +101,7 @@ body {
 thead { /* thead fixado no topo da tabela */
     position: sticky;
     top: 0;
-    background-color: #00A36C;
+    background-color: #0072B2;
     padding: 5px;
 }
 
@@ -110,7 +114,7 @@ td, th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: #0072B2;
     color: #FFF;
 }
 
@@ -122,30 +126,30 @@ th > input {
 
 .produtos-button {
 	padding: 5px 10px;
-	background-color: #8C15AB;
+	background-color: #CAE5D4;
     border-radius: 5px;
-    color: #FFF;
+    color: #000;
 }
 
 .apontamento-button {
     padding: 5px 10px;
-    background-color: #0C8DAB;
+    background-color: #A0BDE6;
     border-radius: 5px;
-    color: #FFF;
+    color: #000;
 }
 
 .alterar-button {
     padding: 5px 10px;
-    background-color: #AB9D0C;
+    background-color: #F0E442;
     border-radius: 5px;
-    color: #FFF;
+    color: #000;
 }
 
 .excluir-button {
     padding: 5px 10px;
-    background-color: #AB2203;
+    background-color: #EB865E;
     border-radius: 5px;
-    color: #FFF;
+    color: #000;
 }
 
 /* Novo Processo */
@@ -203,7 +207,7 @@ form input, select {
 .box-title > p {
     font-size: 24pt;
     font-weight: 700;
-    color: #00A36C;
+    color: #0072B2;
     text-align: center;
     padding: 20px 0;
 }
@@ -211,7 +215,7 @@ form input, select {
 .box-value > p {
     font-size: 40pt;
     font-weight: 700;
-    color: #00A36C;
+    color: #0072B2;
     text-align: center;
     padding: 20px 0;
 }
@@ -240,6 +244,7 @@ form input, select {
     .menu-phone {
 		display: block;
         float: right;
+		cursor: pointer;
     }
 
     .sidebar {
@@ -283,9 +288,14 @@ form input, select {
 		width: 100%;
 	}
 
+	.box-title p {
+		font-size: 16pt;
+	}
+
 }
 
 @media only screen and (max-width: 1440px) {
+
 	.box-contents {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -295,4 +305,35 @@ form input, select {
 	.box {
 		width: 100%;
 	}
+
+}
+
+@media only screen and (max-width: 425px) {
+
+	.content > h1, p{
+		text-align: center;
+	}
+
+	.box-contents {
+		display: block;
+	}
+
+	.box {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.form-content {
+		display: block;
+	}
+
+
+	.form-content > form {
+		display: block;
+	}
+
+	.form-content > form > p {
+		margin-bottom: 20px;
+	}
+
 }
