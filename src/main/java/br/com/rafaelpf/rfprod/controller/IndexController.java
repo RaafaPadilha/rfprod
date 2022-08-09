@@ -1,6 +1,5 @@
 package br.com.rafaelpf.rfprod.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,17 +12,23 @@ import br.com.rafaelpf.rfprod.service.ProcessoService;
 @Controller
 public class IndexController {
 
-	@Autowired
-	private OrdemProducaoService ordemProducaoService;
+	private final OrdemProducaoService ordemProducaoService;
 
-	@Autowired
-	private FuncionarioService funcionarioService;
+	private final FuncionarioService funcionarioService;
 
-	@Autowired
-	private ProcessoService processoService;
+	private final ProcessoService processoService;
 
-	@Autowired
-	private MaquinaService maquinaService;
+	private final MaquinaService maquinaService;
+
+	public IndexController(OrdemProducaoService ordemProducaoService,
+						   FuncionarioService funcionarioService,
+						   ProcessoService processoService,
+						   MaquinaService maquinaService) {
+		this.ordemProducaoService = ordemProducaoService;
+		this.funcionarioService = funcionarioService;
+		this.processoService = processoService;
+		this.maquinaService = maquinaService;
+	}
 
 	@GetMapping(value = "/")
 	public ModelAndView index() {

@@ -3,7 +3,6 @@ package br.com.rafaelpf.rfprod.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.rafaelpf.rfprod.model.Apontamento;
@@ -13,13 +12,15 @@ import br.com.rafaelpf.rfprod.service.ApontamentoService;
 @Service
 public class ApontamentoServiceImpl implements ApontamentoService {
 
-	@Autowired
-	private ApontamentoRepository apontamentoRepository;
+	private final ApontamentoRepository apontamentoRepository;
+
+	private ApontamentoServiceImpl(ApontamentoRepository apontamentoRepository) {
+		this.apontamentoRepository = apontamentoRepository;
+	}
 
 	@Override
 	public List<Apontamento> apontamentoPorIdOrdemProducao(Long idOrdemProducao) {
-		List<Apontamento> apontamentos = apontamentoRepository.findApontamentoByOrderProducaoId(idOrdemProducao);
-		return apontamentos;
+		return (List<Apontamento>) apontamentoRepository.findApontamentoByOrderProducaoId(idOrdemProducao);
 	}
 
 	@Override

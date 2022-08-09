@@ -3,7 +3,6 @@ package br.com.rafaelpf.rfprod.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.rafaelpf.rfprod.model.Maquina;
@@ -13,13 +12,15 @@ import br.com.rafaelpf.rfprod.service.MaquinaService;
 @Service
 public class MaquinaServiceImpl implements MaquinaService {
 
-	@Autowired
-	private MaquinaRepository maquinaRepository;
+	private final MaquinaRepository maquinaRepository;
+
+	public MaquinaServiceImpl(MaquinaRepository maquinaRepository) {
+		this.maquinaRepository = maquinaRepository;
+	}
 
     @Override
     public List<Maquina> todasMaquinas() {
-		List<Maquina> maquinas = (List<Maquina>) maquinaRepository.findAll();
-		return maquinas;
+		return (List<Maquina>) maquinaRepository.findAll();
     }
 
     @Override

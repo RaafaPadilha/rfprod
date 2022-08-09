@@ -9,7 +9,7 @@ CREATE TABLE maquina (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45) NOT NULL,
 	numeracao VARCHAR(10) NOT NULL,
-	descricao VARCHAR(45) NOT NULL,
+	descricao VARCHAR(100) NOT NULL,
 	id_processo INT NOT NULL,
 	FOREIGN KEY (id_processo) REFERENCES processo (id)
 	ON UPDATE CASCADE

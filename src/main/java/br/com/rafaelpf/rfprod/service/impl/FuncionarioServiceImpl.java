@@ -3,7 +3,6 @@ package br.com.rafaelpf.rfprod.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.rafaelpf.rfprod.model.Funcionario;
@@ -13,13 +12,15 @@ import br.com.rafaelpf.rfprod.service.FuncionarioService;
 @Service
 public class FuncionarioServiceImpl implements FuncionarioService {
 
-	@Autowired
-	private FuncionarioRepository funcionarioRepository;
+	private final FuncionarioRepository funcionarioRepository;
+
+	public FuncionarioServiceImpl(FuncionarioRepository funcionarioRepository) {
+		this.funcionarioRepository = funcionarioRepository;
+	}
 
 	@Override
 	public List<Funcionario> todosFuncionarios() {
-		List<Funcionario> funcionarios = (List<Funcionario>) funcionarioRepository.findAll();
-		return funcionarios;
+		return (List<Funcionario>) funcionarioRepository.findAll();
 	}
 
 	@Override

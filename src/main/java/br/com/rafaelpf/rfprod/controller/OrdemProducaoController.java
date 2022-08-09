@@ -8,7 +8,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,8 +22,11 @@ import br.com.rafaelpf.rfprod.util.OrdemProducaoExcelGenerator;
 @Controller
 public class OrdemProducaoController {
 
-	@Autowired
-	private OrdemProducaoService ordemProducaoService;
+	private final OrdemProducaoService ordemProducaoService;
+
+	public OrdemProducaoController(OrdemProducaoService ordemProducaoService) {
+		this.ordemProducaoService = ordemProducaoService;
+	}
 
 	@GetMapping(value = "/listagemOrdensProducao")
 	public ModelAndView listagemMaquinas() {

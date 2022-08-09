@@ -2,7 +2,6 @@ package br.com.rafaelpf.rfprod.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,11 +17,14 @@ import br.com.rafaelpf.rfprod.service.ProcessoService;
 @Controller
 public class MaquinaController {
 
-	@Autowired
-	private MaquinaService maquinaService;
+	private final MaquinaService maquinaService;
 
-	@Autowired
-	private ProcessoService processoService;
+	private final ProcessoService processoService;
+
+	public MaquinaController(MaquinaService maquinaService, ProcessoService processoService) {
+		this.maquinaService = maquinaService;
+		this.processoService = processoService;
+	}
 
 	@GetMapping(value = "/listagemMaquinas")
 	public ModelAndView listagemMaquinas() {

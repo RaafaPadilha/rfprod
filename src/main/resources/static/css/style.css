@@ -292,6 +292,10 @@ form input, select {
 		font-size: 16pt;
 	}
 
+	#filtros {
+		display: none;
+	}
+
 }
 
 @media only screen and (max-width: 1440px) {

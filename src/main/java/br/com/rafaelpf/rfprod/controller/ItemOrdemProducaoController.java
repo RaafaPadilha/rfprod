@@ -2,7 +2,6 @@ package br.com.rafaelpf.rfprod.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,14 +20,19 @@ import br.com.rafaelpf.rfprod.service.ProdutoService;
 @Controller
 public class ItemOrdemProducaoController {
 
-	@Autowired
-	private ItemOrdemProducaoService itemOrdemProducaoService;
+	private final ItemOrdemProducaoService itemOrdemProducaoService;
 
-	@Autowired
-	private ProdutoService produtoService;
+	private final ProdutoService produtoService;
 
-	@Autowired
-	private OrdemProducaoService ordemProducaoService;
+	private final OrdemProducaoService ordemProducaoService;
+
+	public ItemOrdemProducaoController(ItemOrdemProducaoService itemOrdemProducaoService,
+									   ProdutoService produtoService,
+									   OrdemProducaoService ordemProducaoService) {
+		this.itemOrdemProducaoService = itemOrdemProducaoService;
+		this.produtoService = produtoService;
+		this.ordemProducaoService = ordemProducaoService;
+	}
 
 	@GetMapping(value = "/listagemItensOrdemProducao")
 	public ModelAndView listagemMaquinas(@RequestParam Long id) {

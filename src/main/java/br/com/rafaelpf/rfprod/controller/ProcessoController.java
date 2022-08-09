@@ -2,7 +2,6 @@ package br.com.rafaelpf.rfprod.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import br.com.rafaelpf.rfprod.model.Processo;
@@ -16,8 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ProcessoController {
 
-	@Autowired
-	private ProcessoService processoService;
+	private final ProcessoService processoService;
+
+	public ProcessoController(ProcessoService processoService) {
+		this.processoService = processoService;
+	}
 
 	@GetMapping(value = "/listagemProcessos")
 	public ModelAndView listagemProcessos() {

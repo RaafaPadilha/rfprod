@@ -9,7 +9,7 @@ import br.com.rafaelpf.rfprod.model.Maquina;
 @Repository
 public interface MaquinaRepository extends CrudRepository<Maquina, Long> {
 
-	@Query(value = "SELECT COUNT(*) FROM MAQUINA", nativeQuery = true)
+	@Query(value = "SELECT COUNT(id) FROM MAQUINA", nativeQuery = true)
 	Integer countMaquina();
 
 }

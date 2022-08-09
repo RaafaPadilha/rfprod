@@ -9,7 +9,7 @@ import br.com.rafaelpf.rfprod.model.Funcionario;
 @Repository
 public interface FuncionarioRepository extends CrudRepository<Funcionario, Long> {
 
-	@Query(value = "SELECT COUNT(*) FROM FUNCIONARIO", nativeQuery = true)
+	@Query(value = "SELECT COUNT(id) FROM FUNCIONARIO", nativeQuery = true)
 	Integer countFuncionario();
 
 }

@@ -16,8 +16,11 @@ import br.com.rafaelpf.rfprod.service.ProdutoService;
 @Controller
 public class ProdutoController {
 
-	@Autowired
-	private ProdutoService produtoService;
+	private final ProdutoService produtoService;
+
+	public ProdutoController(ProdutoService produtoService) {
+		this.produtoService = produtoService;
+	}
 
 	@GetMapping(value = "/listagemProdutos")
 	public ModelAndView listagemProdutos() {
