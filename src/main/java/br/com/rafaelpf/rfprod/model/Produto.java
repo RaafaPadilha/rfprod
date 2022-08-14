@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Classe de Produtos
+ * Classe de Produto
+ *
  * @author Rafael Padilha Ferraz
  */
 
@@ -28,6 +29,7 @@ public class Produto {
 	private String nome;
 	private String categoria;
 	private String classe;
+	private Integer condutores;
 	private BigDecimal bitola;
 	private String cor;
 

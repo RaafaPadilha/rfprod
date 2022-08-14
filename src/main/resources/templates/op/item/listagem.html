@@ -52,7 +52,7 @@
             <p>Os campos que contem * são obrigatórios.</p>
             <form  th:action="@{/novoItemOrdemProducao}" th:object="${novoItemOrdemProducao}" method="post">
                 <p>
-					<label>Quantidade (*):</label>
+					<label>Quantidade [Rolo de 100m] (*):</label>
 					<input type="number" th:field="*{quantidade}" placeholder="Quantidade" required>
                 </p>
 				<p>
@@ -60,7 +60,7 @@
                     <select th:field="*{produto}">
                         <option th:each="produto : ${produtos}"
 								th:value="${produto.id}"
-								th:text="${produto.nome}"></option>
+								th:text="${produto.nome} + ' / ' + ${produto.cor} + ' / ' + ${produto.bitola}"></option>
                     </select>
 				</p>
 				<input type="hidden" id="ordemProducao" name="ordemProducao" th:value="${ordemProducao.id}">
@@ -74,15 +74,17 @@
             <table id="tabela">
                 <thead>
                     <tr>
-                        <th>Quantidade</th>
+                        <th>Quantidade [Rolo de 100m]</th>
                         <th>Produto</th>
 						<th>Cor</th>
+						<th>Bitola</th>
 						<th rowspan="2">Ação</th>
                     </tr>
 					<tr>
 						<th><input type="text" id="txtColuna1"></th>
 						<th><input type="text" id="txtColuna2"></th>
 						<th><input type="text" id="txtColuna3"></th>
+						<th><input type="text" id="txtColuna4"></th>
 					</tr>
                 </thead>
                 <tbody>
@@ -90,6 +92,7 @@
 						<td th:text="${itemOrdemProducao.quantidade}"></td>
 						<td th:text="${itemOrdemProducao.produto.nome}"></td>
 						<td th:text="${itemOrdemProducao.produto.cor}"></td>
+						<td th:text="${itemOrdemProducao.produto.bitola}"></td>
 						<td>
 							<a th:href="@{/excluirItemOrdemProducao(id=${itemOrdemProducao.id})}" class="excluir-button">Excluir</a>
 						</td>

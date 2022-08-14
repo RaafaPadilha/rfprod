@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Classe de Processos
+ * Classe de Processo
+ *
  * @author Rafael Padilha Ferraz
  */
 

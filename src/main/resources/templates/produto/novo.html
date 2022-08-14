@@ -64,10 +64,14 @@
 					<input type="text" th:field="*{classe}" pattern=".{4,}" maxlength="15" placeholder="Classe" required>
 				</p>
 				<p>
-					<label>Bitola (*):</label>
-					<input type="number" step="0.01" th:field="*{bitola}" min="1" max="600" placeholder="Bitola (mm)" required>
+					<label>Condutores (*):</label>
+					<input type="number" step="1" th:field="*{condutores}" min="1" max="300" placeholder="Condutores" required>
 				</p>
 				<p>
+					<label>Bitola (*):</label>
+					<input type="number" step="0.01" th:field="*{bitola}" min="0" max="600" placeholder="Bitola (mm)" required>
+				</p>
+				<p class="full-width">
 					<label>Cor (*):</label>
 					<input type="text" th:field="*{cor}" pattern=".{4,}" maxlength="20" placeholder="Cor" required>
 				</p>

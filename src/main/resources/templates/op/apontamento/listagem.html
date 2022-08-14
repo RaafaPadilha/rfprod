@@ -60,6 +60,7 @@
 						<th>Hora Inicial</th>
 						<th>Hora Final</th>
 						<th>Máquina</th>
+						<th>Numeração</th>
                         <th rowspan="2">Ação</th>
                     </tr>
 					<tr id="filtros">
@@ -68,6 +69,7 @@
 						<th><input type="text" id="txtColuna3"></th>
 						<th><input type="text" id="txtColuna4"></th>
 						<th><input type="text" id="txtColuna5"></th>
+						<th><input type="text" id="txtColuna6"></th>
 					</tr>
                 </thead>
                 <tbody>
@@ -77,6 +79,7 @@
 						<td th:text="${apontamento.horaInicio}"></td>
 						<td th:text="${apontamento.horaFim}"></td>
 						<td th:text="${apontamento.maquina.nome}"></td>
+						<td th:text="${apontamento.maquina.numeracao}"></td>
 						<td>
 							<a th:href="@{/alterarApontamentoForm(id=${apontamento.id})}" class="alterar-button">Alterar</a>
 							<a th:href="@{/excluirApontamento(id=${apontamento.id})}" class="excluir-button">Excluir</a>

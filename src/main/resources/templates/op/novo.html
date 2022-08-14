@@ -53,15 +53,15 @@
             <form th:action="@{/novaOrdemProducao}" th:object="${ordemProducao}" method="post">
                 <p>
                     <label>Data de Criação (*):</label>
-                    <input type="date" th:field="*{dataCriacao}" required>
+					<input type="date" id="dataCriacao" name="dataCriacao" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" readonly required>
                 </p>
                 <p>
                     <label>Data Inicial (*):</label>
-                    <input type="date" th:field="*{dataInicio}" required> <!-- Fix me -->
+					<input type="date" id="dataInicio" name="dataInicio" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" readonly required>
                 </p>
                 <p>
                     <label>Data Final (*):</label>
-                    <input type="date" th:field="*{dataFim}" required> <!-- Fix me -->
+					<input type="date" id="dataFim" name="dataFim" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" readonly required>
                 </p>
                 <p>
                     <label>Status (*):</label>

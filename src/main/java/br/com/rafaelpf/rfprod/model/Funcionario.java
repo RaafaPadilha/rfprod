@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Classe de Funcionários
+ * Classe de Funcionário
+ *
  * @author Rafael Padilha Ferraz
  */
 

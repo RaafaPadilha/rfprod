@@ -1,6 +1,3 @@
-/**
- * Inpedir espações em branco nos input[type='text']
- */
 function validInputForm() {
 	let btnForm = document.querySelector("input[type='submit']")
 	let input = document.querySelector("input[type='text']")

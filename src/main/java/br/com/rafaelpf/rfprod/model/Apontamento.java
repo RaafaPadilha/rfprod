@@ -15,6 +15,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Classe de Apontamento
+ *
+ * @author Rafael Padilha Ferraz
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor

@@ -77,7 +77,7 @@
 						<td th:text="${#dates.format(ordemProducao.dataCriacao, 'dd/MM/yyyy')}"></td>
 						<td th:text="${#dates.format(ordemProducao.dataInicio, 'dd/MM/yyyy')}"></td>
 						<td th:text="${#dates.format(ordemProducao.dataFim, 'dd/MM/yyyy')}"></td>
-						<td th:text="${ordemProducao.status}"></td>
+						<td th:style="${ordemProducao.status == 'Não Iniciado' ? 'background-color: #EB865E;' : 'background-color: #FFFFFF;'}" th:text="${ordemProducao.status}"></td>
 						<td>
 							<a th:href="@{/listagemItensOrdemProducao(id=${ordemProducao.id})}" class="produtos-button">Produtos</a>
 							<a th:href="@{/listagemApontamentos(id=${ordemProducao.id})}" class="apontamento-button">Apontamentos</a>

@@ -59,6 +59,7 @@
                         <th>Nome</th>
                         <th>Categoria</th>
 						<th>Classe</th>
+						<th>Condutores</th>
 						<th>Bitola</th>
 						<th>Cor</th>
 						<th rowspan="2">Ação</th>
@@ -70,6 +71,7 @@
 						<th><input type="text" id="txtColuna4"></th>
 						<th><input type="text" id="txtColuna5"></th>
 						<th><input type="text" id="txtColuna6"></th>
+						<th><input type="text" id="txtColuna7"></th>
 					</tr>
                 </thead>
                 <tbody>
@@ -78,6 +80,7 @@
 						<td th:text="${produto.nome}"></td>
 						<td th:text="${produto.categoria}"></td>
 						<td th:text="${produto.classe}"></td>
+						<td th:text="${produto.condutores}"></td>
 						<td th:text="${produto.bitola}"></td>
 						<td th:text="${produto.cor}"></td>
 						<td>

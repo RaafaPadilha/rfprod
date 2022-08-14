@@ -53,7 +53,7 @@
             <form th:action="@{/novoApontamento}" th:object="${apontamento}" method="post">
                 <p class="full-width">
 					<label>Data Atual (*):</label>
-					<input type="date" th:field="*{dataAtual}" required>
+					<input type="date" id="dataAtual" name="dataAtual" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" readonly required>
                 </p>
                 <p>
 					<label>Hora Inicial (*):</label>
@@ -68,7 +68,7 @@
                     <select th:field="*{maquina}">
                         <option th:each="maquina : ${maquinas}"
 								th:value="${maquina.id}"
-								th:text="${maquina.nome}"></option>
+								th:text="${maquina.nome} + ' / ' + ${maquina.numeracao}"></option>
                     </select>
                 </p>
                 <p>

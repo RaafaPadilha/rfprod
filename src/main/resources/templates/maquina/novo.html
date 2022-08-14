@@ -57,15 +57,15 @@
                 </p>
                 <p>
                     <label>Numeração (*):</label>
-                    <input type="text" th:field="*{numeracao}" pattern=".{4,}" maxlength="10" placeholder="Numeração da máquina">
+                    <input type="text" th:field="*{numeracao}" pattern=".{4,}" maxlength="10" placeholder="Numeração da máquina" required>
                 </p>
                 <p>
                     <label>Descrição (*):</label>
-                    <input type="text" th:field="*{descricao}" pattern=".{4,}" maxlength="100" placeholder="Descrição sobre a máquina">
+                    <input type="text" th:field="*{descricao}" pattern=".{4,}" maxlength="100" placeholder="Descrição sobre a máquina" required>
                 </p>
                 <p>
                     <label>Processo (*):</label>
-                    <select th:field="*{processo}">
+                    <select th:field="*{processo}" required>
                         <option th:each="processo : ${processos}"
 								th:value="${processo.id}"
 								th:text="${processo.nome}"></option>

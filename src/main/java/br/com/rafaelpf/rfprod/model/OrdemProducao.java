@@ -13,6 +13,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Classe de OrdemProducao
+ *
+ * @author Rafael Padilha Ferraz
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor

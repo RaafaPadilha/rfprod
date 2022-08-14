@@ -314,10 +314,6 @@ form input, select {
 
 @media only screen and (max-width: 425px) {
 
-	.content > h1, p{
-		text-align: center;
-	}
-
 	.box-contents {
 		display: block;
 	}

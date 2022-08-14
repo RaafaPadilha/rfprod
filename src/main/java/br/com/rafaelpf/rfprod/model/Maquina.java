@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Classe de Máquinas
+ * Classe de Máquina
+ *
  * @author Rafael Padilha Ferraz
  */
 
