@@ -9,9 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Classe de OrdemProducao
@@ -21,6 +24,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
+@ToString
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "ordem_producao")
