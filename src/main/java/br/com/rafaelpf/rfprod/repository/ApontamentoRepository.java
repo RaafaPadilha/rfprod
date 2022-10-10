@@ -12,7 +12,7 @@ import br.com.rafaelpf.rfprod.model.Apontamento;
 public interface ApontamentoRepository extends CrudRepository<Apontamento, Long> {
 
 	@Query (
-		value = "SELECT * FROM APONTAMENTO AS P WHERE P.ID_ORDEM_PRODUCAO = ?1",
+		value = "SELECT * FROM apontamento AS p WHERE p.id_ordem_producao = ?1",
 		nativeQuery = true
 	)
 	List<Apontamento> findApontamentoByOrderProducaoId(Long idOrdemProducao);

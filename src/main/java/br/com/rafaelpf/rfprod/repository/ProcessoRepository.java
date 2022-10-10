@@ -9,7 +9,10 @@ import br.com.rafaelpf.rfprod.model.Processo;
 @Repository
 public interface ProcessoRepository extends CrudRepository<Processo, Long> {
 
-	@Query(value = "SELECT COUNT(id) FROM PROCESSO", nativeQuery = true)
+	@Query(
+		value = "SELECT COUNT(id) FROM processo",
+		nativeQuery = true
+	)
 	Integer countProcesso();
 
 }

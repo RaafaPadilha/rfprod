@@ -1,0 +1,19 @@
+spring:
+  # Configuração do MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/rfprod
+    username: root
+    password: 1234
+
+  # (none) é recomendado para a produção
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 8080
+  #
+  # Desabilitar a página Whitelabel
+  error:
+    whitelabel:
+      enabled: false

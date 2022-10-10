@@ -8,7 +8,7 @@ CREATE TABLE processo (
 );
 
 INSERT INTO
-	PROCESSO
+	processo
 VALUES
 	(1,'Laminação'),
 	(2,'Trefilação'),
@@ -29,7 +29,7 @@ CREATE TABLE maquina (
 );
 
 INSERT INTO
-	MAQUINA
+	maquina
 VALUES
 	(1,'Laminadora de Chapas Grossas','LMD-001','Laminadora de chapas grossas p/ fios de cobre e alumínio 15CV',1),
 	(2,'Máquina de Fundição Contínua','MFC-001','Máquina de fundição contínua p/ barras de cobre modelo Smather',1),
@@ -63,7 +63,7 @@ CREATE TABLE funcionario (
 );
 
 INSERT INTO
-	FUNCIONARIO
+	funcionario
 VALUES
 	(1,'Luan','Tomás Bruno Caldeira','1967-06-15','910.942.428-88','(61) 98796-0504','luan-caldeira78@lidertel.com.br','Avenida Santo Pelozio - Jardim das Azaléias - 756',2500.00,1),
 	(2,'Nelson','Joaquim Iago Sales','1970-07-13','017.288.748-81','(19) 98879-1618','nelson-sales82@abrangencia.com.br','Rua Doutor Romeu Furlanetto - Jardim Satélite - 873',2300.00,2),
@@ -98,7 +98,7 @@ CREATE TABLE produto (
 );
 
 INSERT INTO
-	PRODUTO
+	produto
 VALUES
 	(1,'Cabo Rígido 750V','Cabo Rígido','Classe 2',1,10.00,'Verde'),
 	(2,'Cabo Rígido HEPR 1kV','Cabo Rígido','Classe 2',1,16.00,'Azul'),
@@ -125,7 +125,7 @@ CREATE TABLE ordem_producao (
 );
 
 INSERT INTO
-	ORDEM_PRODUCAO
+	ordem_producao
 VALUES
 	(1,'2022-08-14','2022-08-14','2022-09-30','Em Produção'),
 	(2,'2022-08-14','2022-08-14','2022-08-20','Em Produção'),
@@ -141,7 +141,7 @@ CREATE TABLE item_ordem_producao (
 );
 
 INSERT INTO
-	ITEM_ORDEM_PRODUCAO
+	item_ordem_producao
 VALUES
 	(1,80,1,1),
 	(2,50,9,1),
@@ -162,7 +162,7 @@ CREATE TABLE apontamento (
 );
 
 INSERT INTO
-	APONTAMENTO
+	apontamento
 VALUES
 	(1,'2022-08-14','04:20:00','13:40:00',7,1),
 	(2,'2022-08-14','04:20:00','13:40:00',4,1),

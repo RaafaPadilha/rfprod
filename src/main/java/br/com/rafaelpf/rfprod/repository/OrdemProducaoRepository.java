@@ -9,7 +9,10 @@ import br.com.rafaelpf.rfprod.model.OrdemProducao;
 @Repository
 public interface OrdemProducaoRepository extends CrudRepository<OrdemProducao, Long> {
 
-	@Query(value = "SELECT COUNT(id) FROM ORDEM_PRODUCAO", nativeQuery = true)
+	@Query(
+		value = "SELECT COUNT(id) FROM ordem_producao",
+		nativeQuery = true
+	)
 	Integer countOrdemProducao();
 
 }

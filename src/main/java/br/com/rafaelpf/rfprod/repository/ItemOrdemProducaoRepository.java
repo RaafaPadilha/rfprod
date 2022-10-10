@@ -12,7 +12,7 @@ import br.com.rafaelpf.rfprod.model.ItemOrdemProducao;
 public interface ItemOrdemProducaoRepository extends CrudRepository<ItemOrdemProducao, Long> {
 
 	@Query (
-		value = "SELECT * FROM ITEM_ORDEM_PRODUCAO AS IOP WHERE IOP.ID_ORDEM_PRODUCAO = ?1",
+		value = "SELECT * FROM item_ordem_producao AS iop WHERE iop.id_ordem_producao = ?1",
 		nativeQuery = true
 	)
 	List<ItemOrdemProducao> findItemOrdemProducaoByOrderProducaoId(Long idOrdemProducao);
